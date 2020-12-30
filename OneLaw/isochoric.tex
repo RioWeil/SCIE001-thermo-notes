@@ -1,0 +1,31 @@
+\subsubsection{Isochoric Processes}
+Isochoric processes are heating/cooling processes where the volume of the gas does not change ($\Delta V =0$). For example, consider a situation where I have a gas in a closed box with rigid walls. Now, imagine I heat up the gas by holding a lighted candle underneath it. It is clear that the gas does not change in volume, as the walls are rigid (there is nothing it can expand out to, or for it to be compressed by), but we are changing the energy of the gas. Let's look at the properties of this process a little more closely.\\
+
+Firstly, what is the work that's done in this process? This one's fairly simple; We can return to the definition \[ W = -\int_{V_1}^{V_2} P(V)dV \] and we realize that as there is no change in volume, $V_1 = V_2$ and therefore: \[ W = -\int_{V_1}^{V_1} P(V)dV = 0 \]
+\begin{equation}
+    W=0
+\end{equation}
+and the work done is zero! Combining this with the first law of thermodynamics, we have that: \[\Delta E = Q + W = Q \]
+where we see that the change in energy is just the heat that flows in/out of the system, as we might have expected. Finally, as we know that $\Delta E = Q$, we also obtain the heat as a function of the change in temperature and amount (and degrees of freedom!) of the gas:
+\begin{equation} 
+Q = nc_v\Delta T
+\end{equation}
+Our earlier question about why we have called $c_v$ as we have is now answered! We can see from here that $c_v = \frac{\chi}{2}R$ is equivalent to the heat capacity of a material, where we have fixed the volume. \\Finally, we may ask what might this process look like on a PV-diagram? Let's return to the candle example. As we heat the gas up, the volume of the gas remains unchanged, so the process should be a graph of a line with constant $V$. Conversely, as the gas goes from a lower temperature $T_1$ to a higher temperature $T_2$, we would expect the pressure to increase. Hence, on a PV diagram, we would expect a straight vertical line:
+\begin{center}
+    \begin{tikzpicture}
+ \draw[stealth-stealth] (0,5) node[below left]{$P$} |- (5,0) node[below left]{$V$};
+\draw[thick,->] (2.5,1) -- (2.5,2.5);
+\draw[thick] (2.5,2.5) -- (2.5,4);
+\draw[dashed] (2.5,1) -- (2.5,0);
+\draw[dashed] (2.5,1) -- (0,1);
+\draw[dashed] (2.5,4) -- (0,4);
+\filldraw (2.5,1) circle (2pt);
+\filldraw (2.5,4) circle (2pt);
+\node[below] at (2.5,0) {$V_1$};
+\node[left] at (0,1) {$P_1$};
+\node[left] at (0,4) {$P_2$};
+\node[right] at (2.5,1) {$T_1$};
+\node[right] at (2.5,4) {$T_2$};
+\end{tikzpicture}
+\end{center}
+It's also very easy to see just from this graph that isochoric processes have zero work; The area under a curve on a PV-diagram yields the work done in that process, but a straight vertical line obviously has no area. 

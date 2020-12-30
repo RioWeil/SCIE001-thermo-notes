@@ -1,0 +1,56 @@
+\subsubsection{Macrostates and Microstates}
+I'll try to define these two words as succinctly as I can.
+\begin{itemize}
+    \item Macrostate: The state of a system as characterized by quantities that can be measured independent of any one part of the system. Some examples of such quantities would be: Pressure, Volume, and Temperature.
+    \item Microstate: The state of a system as characterized by the state of individual components of the system. For example, the exact spacial distribution of particles within a gas.
+\end{itemize}
+Let's look as a bit more of a concrete example. Say we're looking at a box with 6 particles, divided into two halves.
+
+\begin{figure}[ht!]
+    \centering
+\begin{tikzpicture}
+\draw[draw = black] (0,0) rectangle (6,3);
+\draw[dashed] (3,0) -- (3,3);
+\draw[fill=red, draw=red] (1,2) circle (2pt);
+\draw[fill=blue, draw=blue] (2,2) circle (2pt);
+\draw[fill=cyan, draw=cyan] (1.5,1) circle (2pt);
+\draw[fill=magenta, draw=magenta] (4,1) circle (2pt);
+\draw[fill=orange, draw=orange] (5,1) circle (2pt);
+\draw[fill=green, draw=green] (4.5,2) circle (2pt);
+\end{tikzpicture}
+    \caption{The box with three particles on each side.}
+\end{figure}
+\phantom{i} \\
+\phantom{i} \\
+The \textit{macrostate} of this box is something we could say without knowing which particle was where. Without knowing that, all we could say is that each side of the box has three particles. So, the macrostate of the box is three particles on each side. The \textit{microstate} of the box would then be which exact side each particle was on. So for example...
+
+\begin{figure}[ht!]
+    \centering
+\begin{tikzpicture}
+\draw[draw = black] (0,0) rectangle (6,3);
+\draw[dashed] (3,0) -- (3,3);
+\draw[fill=red, draw=red] (1.5,1.5) circle (2pt);
+\draw[fill=blue, draw=blue] (5,1) circle (2pt);
+\draw[fill=cyan, draw=cyan] (4.5,1.5) circle (2pt);
+\draw[fill=magenta, draw=magenta] (4,2) circle (2pt);
+\draw[fill=orange, draw=orange] (4,1) circle (2pt);
+\draw[fill=green, draw=green] (5,2) circle (2pt);
+\end{tikzpicture}
+    \caption{This box has a different number of particles on each side, so it's in as different \textit{macrostate} than the first one.}
+\end{figure}
+\begin{figure}[ht!]
+    \centering
+\begin{tikzpicture}
+\draw[draw = black] (0,0) rectangle (6,3);
+\draw[dashed] (3,0) -- (3,3);
+\draw[fill=red, draw=red] (1,2) circle (2pt);
+\draw[fill=orange, draw=orange] (2,2) circle (2pt);
+\draw[fill=cyan, draw=cyan] (1.5,1) circle (2pt);
+\draw[fill=magenta, draw=magenta] (4,1) circle (2pt);
+\draw[fill=blue, draw=blue] (5,1) circle (2pt);
+\draw[fill=green, draw=green] (4.5,2) circle (2pt);
+\end{tikzpicture}
+    \caption{This box has the same number of particles on each side, so it's the same \textit{macrostate} as the first one. However, the blue and orange particles have switched sides, making this a different \textit{microstate} than the first box had. Note that two different macrostates of a system cannot share a microstate.}
+\end{figure}
+\newpage
+

@@ -1,0 +1,81 @@
+\subsubsection{Isothermal Processes}
+Isothermal processes are compression/expansion processes in which the temperature of the gas remains constant ($\Delta T = 0$). These processes occur very slowly. As an example, we consider a scenario where I have some gas in a cylinder (closed off at the top by a piston), where I push down on the piston very very slowly. Doing so, the gas inside the piston remains at thermal equilibrium with its surroundings. Hence, I as I do work on the gas, an equal amount of energy leaves the gas in the form of heat, and the gas inside the piston stays at the same temperature. \\
+\noindent
+One immediate consequence that we obtain from $\Delta E = nc_v\Delta T$ is that:
+\begin{equation}
+    \Delta E = 0
+\end{equation}
+And by the first law of thermodynamics, we have that:
+\begin{equation}
+    W = -Q
+\end{equation}
+What exactly is the amount of work done in an isothermal process? We once again return to the definition of work:
+\[ W = -\int_{V_1}^{V_2}P(V)dV \]
+We have to be very careful here though; in this situation, the pressure is not constant as we vary/integrate over the volume. So we have to be a bit clever, and think of a way in which we can express the pressure as a function of volume so we can carry out the integral. If your intution was "ideal gas law", then you'd be exactly right! Let us make the substition:
+\[ P(V) = \frac{nRT}{V} \]
+Which turns the integral into:
+\[ W = -\int_{V_1}^{V_2}nRT\frac{dV}{V}\]
+Throughout this process $T$ is held constant, and the amount of gas does not change, so we can take most of the terms out of the integral as a constant:
+\[ W = -nRT\int_{V_1}^{V_2}\frac{dV}{V}\]
+The remaining integral is straightforward:
+\[ W = -nRT \left. \ln(V) \right|_{V_1}^{V_2} = -nRT\left(\ln(V_2)-\ln(V_1)\right) = nRT\left(\ln(V_1)-\ln(V_2)\right) \]
+So applying some laws of logarithms, we hence obtain our expression for the work done on the gas in an isothermal process:
+\begin{equation}
+W = nRT\ln\left(\frac{V_1}{V_2}\right)
+\end{equation}
+As we found earlier, the heat flow during an isothermal process is simply the negative of this, so:
+\begin{equation}
+    Q = -nRT\ln\left(\frac{V_1}{V_2}\right) = nRT\ln\left(\frac{V_2}{V_1}\right)
+\end{equation}
+\noindent
+Finally, we consider how isothermal curves show up on PV diagrams. From how the expression for the work looks (with the $\ln$ term), you may suspect that we might get a "curved" curve rather than a straight diagonal line, and you would be right. Pictured here is an isothermal expansion from initial state $P_1,V_1$ to final state $P_2,V_2$. The temperature stays constant at every point on the curve. 
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+%        % (made labels more common)
+%        % (because of the "sketch" type of the plot these should not be needed)
+%        xlabel={Volume $(\mathrm{m}^3)$},
+%        ylabel={Pressure (Pa)},
+        % (changed ticks + labels to normal ticks instead of extra ticks)
+        xtick={3,6},
+        xticklabels={$V_1$,$V_2$},
+        ytick={1.5,6},
+        yticklabels={$P_2$,$P_1$},  % <-- (changed order of entries)
+    ]
+        % fill the area below the curve
+        % (draw it first, so it is below everything else)
+
+
+        % draw the dashed lines
+        % (using two different approaches)
+        \addplot [dashed,domain=0:3,samples=2] {6};
+        \addplot [dashed,domain=0:6,samples=2] {1.5};
+
+        \draw [dashed,thin] (axis cs:6,1.5) -- (axis cs:6,0);
+        \draw [dashed,thin] (axis cs:3,6)   -- (axis cs:3,0);
+
+        % now draw the curve
+        \draw [
+            fleche={0.6:black},              % <-- added
+        ] (axis cs:3,6) to [bend right=30]
+            % store start and end coordinates
+            coordinate [pos=1] (start)
+            coordinate [pos=0] (end)
+        (axis cs:6,1.5);
+
+        % draw start and end point
+        \fill [radius=2pt]
+            (start) circle[]
+            (end)   circle[];
+    \end{axis}
+        \node[below] at (6.5,0) {$V$};
+        \node[left] at (0,5.5) {$P$};
+        \node[right] at (2.2,3.4) {$T_1$};
+        \node[right] at (4.25,0.9) {$T_1$};
+\end{tikzpicture}
+\end{center}

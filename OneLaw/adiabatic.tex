@@ -1,0 +1,118 @@
+\subsubsection{Adiabatic Processes}
+Adiabatic processes are compression/expansion processes in which the gas has no heat flow ($Q=0$). These processes tend to be either fast, or occur under insulated conditions; for example, consider the same gas cylinder with the piston we discussed in the isothermal section. If instead of pushing in the piston very slowly, we push down forcefully, the compression will occur so quickly that there wouldn't be time for heat to flow out of the gas. This would be an adiabatic compression. As another example, if we had a cylinder of gas surrounded with thermal insulation, then even if we were to compress the piston or let the gas expand, there would be no heat flow and again we would have an adiabatic process.Let's consider some mathematical consequences of adiabatic processes. As a consequence of zero heat flow, by the first law of thermodynamics we have that:
+\begin{equation}
+    \Delta E = W
+\end{equation}
+So then for an adiabatic process, we can get that:
+\begin{equation}
+    W = \frac{\chi}{2}N{k_b}\Delta T
+\end{equation}
+I'm also going to show the derivation for the other relation relevant to adiabatic processes. The derivation is beyond the scope of this course, so if you don't want to read it just skip to the final equations we obtain at the end end\footnote{My disappointment will be immeasurable and my day ruined if you do}. This derivation first takes the relation in (20) for an infinitesimal step, then runs some rearrangement before integrating:
+\begin{align*}
+    dE &= \delta W \\
+    \frac{\chi}{2}N{k_b}dT &= -PdV
+\end{align*}
+Like in the isothermal case, we make a substitution with ideal gas law, namely
+\begin{equation*}
+    N{k_b}dT = d(PV)
+\end{equation*}
+I also use the approximation $d(PV) = VdP + PdV$\footnote{As for why, play around with $d(PV) = (P+dP)(V+dV) - PV$... or just consider the product rule.}. Making all of these substitutions gives
+\begin{equation*}
+    \frac{\chi}{2}(VdP + PdV) = -PdV
+\end{equation*}
+At this point you have all the parts necessary to rearrange this equation into
+\begin{equation*}
+    \frac{\chi}{2}\frac{dP}{P} = -\Big(\frac{\chi}{2} + 1\Big)\frac{dV}{V}
+\end{equation*}
+If you guessed that we integrate both sides of this equation, then you're right! This may seem a bit strange, since we're integrating the two sides of the equation against two different variables, but it is in fact perfectly legal. By integrating, we're taking a sum on both sides of all the infinitesimal steps from the initial to final state. Since both sides are using the same initial and final state, it makes sense that taking small steps between them should always yield the same result. Anyways, integrating this equation gives:
+\begin{equation*}
+    \int_{P_1}^{P_2} \frac{\chi}{2}\frac{dP}{P} = \int_{V_1}^{V_2} -\Big(\frac{\chi}{2} + 1\Big)\frac{dV}{V}
+\end{equation*}
+Again, we can factor out the constant terms to get:
+\begin{equation*}
+    \frac{\chi}{2}\int_{P_1}^{P_2} \frac{dP}{P} = -\Big(\frac{\chi}{2} + 1\Big)\int_{V_1}^{V_2} \frac{dV}{V}
+\end{equation*}
+At this point the integral on each side evaluates in the exact same way as when we integrated to get isothermal work done:
+\begin{equation*}
+    \frac{\chi}{2}\ln{\Big(\frac{P_2}{P_1}\Big)} = -\Big(\frac{\chi}{2} + 1\Big)\ln{\Big(\frac{V_2}{V_1}\Big)}
+\end{equation*}
+Multiplying both sides of this equation by $\frac{2}{\chi}$ yields:
+\begin{equation*}
+    \ln{\Big(\frac{P_2}{P_1}\Big)} = -\Big(\frac{\chi+2}{\chi}\Big)\ln{\Big(\frac{V_2}{V_1}\Big)}
+\end{equation*}
+We then take the natural exponent of both sides of the equation to get:
+\begin{align*}
+    e^{\ln{\big(\frac{P_2}{P_1}\big)}} &= e^{-\big(\frac{\chi+2}{\chi}\big)\ln{\big(\frac{V_2}{V_1}\big)}} \\
+    \frac{P_2}{P_1} &= e^{\ln{\Big(\big(\frac{V_2}{V_1}\big)^{-\big(\frac{\chi+2}{\chi}\big)}\Big)}} \\
+    \frac{P_2}{P_1} &= \Big(\frac{V_2}{V_1}\Big)^{-\big(\frac{\chi+2}{\chi}\big)}
+\end{align*}
+Raise both sides to the exponent -1, rearrange a bit, and you get:
+\begin{equation}
+    {P_1}{V_1}^{\frac{\chi+2}{\chi}} = {P_2}{V_2}^{\frac{\chi+2}{\chi}}
+\end{equation}
+Sometimes the quantity $\frac{\chi+2}{\chi}$ is called $\gamma$ as well. Note that this identity we have discovered can take some alternative forms (which can be useful for exams); for example, making the subtitution $P = \frac{nRT}{V}$, we get:
+\[ \frac{nRT_1}{V_1}V_1^\gamma = \frac{nRT_2}{V_2}V_2^\gamma \]
+And cancelling out $nR$ on both sides and grouping like terms, we obtain the formula:
+\begin{equation}
+    T_1V_1^{\gamma-1} = T_2V_2^{\gamma-1}
+\end{equation}
+Finally, we again consider what an adiabatic process looks like on a PV diagram; the visual answer is that it looks quite a bit like the isothermal curve, but is steeper/lies above it. You can see both curves pictured below for comparison. The adiabatic compression is pictured in black, and the isothermal curve is dashed and red:
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+%        % (made labels more common)
+%        % (because of the "sketch" type of the plot these should not be needed)
+%        xlabel={Volume $(\mathrm{m}^3)$},
+%        ylabel={Pressure (Pa)},
+        % (changed ticks + labels to normal ticks instead of extra ticks)
+        xtick={3.75,6},
+        xticklabels={$V_1$,$V_2$},
+        ytick={1.5,6},
+        yticklabels={$P_2$,$P_1$},  % <-- (changed order of entries)
+    ]
+        % fill the area below the curve
+        % (draw it first, so it is below everything else)
+
+
+        % draw the dashed lines
+        % (using two different approaches)
+        \addplot [dashed,domain=0:3.75,samples=2] {6};
+        \addplot [dashed,domain=0:6,samples=2] {1.5};
+
+        \draw [dashed,thin] (axis cs:6,1.5) -- (axis cs:6,0);
+        \draw [dashed,thin] (axis cs:3.75,6)   -- (axis cs:3.75,0);
+
+        % now draw the curve
+        \draw [
+            dotted,red             % <-- added
+        ] (axis cs:3,6) to [bend right=30]
+            % store start and end coordinates
+            coordinate [pos=1] (start)
+            coordinate [pos=0] (end)
+        (axis cs:6,1.5);
+        
+        \draw [
+            fleche={0.6:black}            % <-- added
+        ] (axis cs:3.75,6) to [bend right=30]
+            % store start and end coordinates
+            coordinate [pos=1] (start)
+            coordinate [pos=0] (end)
+        (axis cs:6,1.5);
+        
+        
+        % draw start and end point
+        \fill [radius=2pt]
+            (start) circle[]
+            (end)   circle[];
+        \node[right] at (axis cs:6,1.5) {$T_2$};
+        \node[right] at (axis cs:3.75,6) {$T_1$};
+    \end{axis}
+        \node[below] at (6.5,0) {$V$};
+        \node[left] at (0,5.5) {$P$};
+
+\end{tikzpicture}
+\end{center}

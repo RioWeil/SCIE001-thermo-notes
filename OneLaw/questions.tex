@@ -1,0 +1,147 @@
+\subsection{Practice Problems}
+\begin{enumerate}
+\item If we think back to the ideal gas law, a term that we could add to make it more general (applicable to non-ideal gases) is to add a term correcting for molecular interactions. Doing so, we get the equation:
+\begin{equation}
+    \label{eqn:(33)}
+    \left(P+a\frac{n^2}{V^2}\right)V = nRT
+\end{equation}  
+where $a\frac{n^2}{V^2}$ is the interaction term. Note that if we also add an $-nb$ term to the volume to account for the size of the molecules, we end up with the very general Van der Waals equation:
+\begin{equation}
+    \left(P+a \frac{n^{2}}{V^{2}}\right)\left(V-n b\right)=n R T
+\end{equation}
+But for the purposes of this question, let's assume $b=0$ to make our lives easier.
+\begin{enumerate}
+    \item Manipulate the equation \ref{eqn:(33)} to obtain pressure as a function of temperature, volume, and amount of gas.
+    \item Suppose that I isothermally compress the gas given in equation \ref{eqn:(33)} from $V_1$ to $V_2$. How much work do I do on the gas?
+\end{enumerate}
+
+\item For each of the 4 (8) processes of isochoric heating, isochoric cooling, isobaric expansion, isobaric compression, isothermal expansion, isothermal compression, adiabatic expansion, and adiabatic compression, consider:
+    \begin{enumerate}
+        \item Is work done on/done by the gas, or is it zero?
+        \item Does heat flow into or out of the gas, or is it zero?
+        \item Does the temperature of the gas increase, decrease, or stay the same?
+    \end{enumerate}
+\item Consider the following heat engine, composed of 10 moles of monoatomic gas, below:
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+%        % (made labels more common)
+%        % (because of the "sketch" type of the plot these should not be needed)
+%        xlabel={Volume $(\mathrm{m}^3)$},
+%        ylabel={Pressure (Pa)},
+        % (changed ticks + labels to normal ticks instead of extra ticks)
+        xtick={3,6},
+        xticklabels={$2$,$4$},
+        ytick={1.5,6},
+        yticklabels={$5$,$15$},  % <-- (changed order of entries)
+    ]
+        % fill the area below the curve
+        % (draw it first, so it is below everything else)
+
+
+        % draw the dashed lines
+        % (using two different approaches)
+        \addplot [dashed,domain=0:3,samples=2] {6};
+        \addplot [dashed,domain=0:3,samples=2] {1.5};
+
+        \draw [dashed,thin] (axis cs:6,1.5) -- (axis cs:6,0);
+        \draw [dashed,thin] (axis cs:3,1.5)   -- (axis cs:3,0);
+
+        % now draw the curve
+        \draw [
+            fleche={0.55:black}              % <-- added
+        ] (axis cs:3,6) to
+            % store start and end coordinates
+            coordinate [pos=1] (start)
+            coordinate [pos=0] (end)
+        (axis cs:6,1.5);
+        \draw[fleche={0.55:black}] (axis cs:6,1.5) to (axis cs:3,1.5);
+        \draw[fleche={0.5:black}] (axis cs:3,1.5) to (axis cs:3,6);
+
+        % draw start and end point
+        \fill [radius=2pt]
+            (start) circle[]
+            (end)   circle[];
+        \filldraw[fill=black] (axis cs: 3,1.5) circle (2pt);
+    \end{axis}
+        \node[below] at (6.5,0) {$V (m^3)$};
+        \node[left] at (0,5.5) {$P (kPa)$};
+        \node[above] at (2.05,3.5) {$3$};
+        \node[right] at (4.25,0.9) {$1$};
+        \node[left] at (2.1,1.15) {$2$};
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}
+    \item What is the net change in the internal energy of the heat engine after one cycle?
+    \item What is the work done by the heat engine in one cycle? (in kiloJoules... note that $1\textrm{Pa}*1\textrm{m}^3 = 1\textrm{J}$)
+    \item What is the net heat flow of the heat engine in one cycle? (in kiloJoules)
+    \item Solve for the temperature (in Kelvin) at each of the three points.
+    \item For each step, determine the work done by the engine, and how much heat flows into/out of the engine. 
+\end{enumerate}
+\item Consider the following heat engine, composed of monoatomic gas. Treat the process $3 \rightarrow 1$ as isothermal.
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+%        % (made labels more common)
+%        % (because of the "sketch" type of the plot these should not be needed)
+%        xlabel={Volume $(\mathrm{m}^3)$},
+%        ylabel={Pressure (Pa)},
+        % (changed ticks + labels to normal ticks instead of extra ticks)
+        xtick={3,6},
+        xticklabels={$V_0/2$,$V_0$},
+        ytick={1.5},
+        yticklabels={$P_0$},  % <-- (changed order of entries)
+    ]
+        % fill the area below the curve
+        % (draw it first, so it is below everything else)
+
+
+        % draw the dashed lines
+        % (using two different approaches)
+        \addplot [dashed,domain=0:3,samples=2] {1.5};
+
+        \draw [dashed,thin] (axis cs:6,1.5) -- (axis cs:6,0);
+        \draw [dashed,thin] (axis cs:3,1.5)   -- (axis cs:3,0);
+
+        % now draw the curve
+        \draw [
+            fleche={0.55:black}              % <-- added
+        ] (axis cs:3,6) to [bend right = 30]
+            % store start and end coordinates
+            coordinate [pos=1] (start)
+            coordinate [pos=0] (end)
+        (axis cs:6,1.5);
+        \draw[fleche={0.55:black}] (axis cs:6,1.5) to (axis cs:3,1.5);
+        \draw[fleche={0.5:black}] (axis cs:3,1.5) to (axis cs:3,6);
+
+        % draw start and end point
+        \fill [radius=2pt]
+            (start) circle[]
+            (end)   circle[];
+        \filldraw[fill=black] (axis cs: 3,1.5) circle (2pt);
+    \end{axis}
+        \node[below] at (6.5,0) {$V$};
+        \node[left] at (0,5.5) {$P$};
+        \node[above] at (2.05,3.5) {$3$};
+        \node[right] at (4.25,0.9) {$1$};
+        \node[left] at (2.1,1.15) {$2$};
+\end{tikzpicture}
+\begin{enumerate}
+    \item What is the ratio of the temperatures between point $3$ and point $1$?
+    \item Solve for the pressure at point $3$ in terms of $P_0$ and $V_0$
+    \item Mark the highest temperature $T_H$ and the lowest temperature $T_C$ on the graph. 
+    \item Solve for the efficiency of the heat engine. Your answer should not depend on $P_0$, $V_0$, or the amount of gas in the heat engine. (Note: Solving for the efficiency is quite a bit more difficult than the other parts; a partial solution of the work and heat done during certain steps would be a good partial solution.)
+\end{enumerate}
+\end{center}
+\item Question 4 again, except this time treat process $3 \rightarrow 1$ as adiabatic (Note that part (d) is \textit{quite} difficult).
+\item Use what you know of adiabatic and isothermal processes to finish deriving the Carnot efficiency.
+
+\end{enumerate}

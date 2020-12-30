@@ -1,0 +1,54 @@
+\subsubsection{Isobaric Processes}
+Isobaric processes are compression/expansion processes in which the pressure of the gas does not change ($\Delta P = 0$). For example, consider a box of gas where the top face is a piston. If I heat up the gas with a candle, then the piston gets pushed up by the warming, expanding gas, while the pressure of the gas stays constant.  \\
+
+First, let us determine the work done on the gas in this process:
+\[W = -\int_{V_1}^{V_2} P(V)dV \]
+As $P$ is a constant, we can just take it outside the integral, and this becomes a very straightforward integration:
+\[W = -P\int_{V_1}^{V_2} dV = -P \cdot \left. V \right|_{V_1}^{V_2} = -P(V_2-V_1) = -P\Delta V\]
+\begin{equation}
+    W = -P\Delta V
+\end{equation}
+Which is exactly as we would have expected. \\
+
+Now that we know what the work done in an isobaric process is, we can consider the heat flow. We return to the first law of thermodynamics:
+\[ \Delta E = W + Q \]
+We recall that the following formula (from section 1) always holds true for change in energy:
+\[ \Delta E = nc_v\Delta T = n \frac{\chi}{2}R\Delta T \]
+We substitute the formulas for work and change in energy we have obtained:
+\[ n \frac{\chi}{2}R\Delta T  = -P\Delta V + Q \]
+Now, we use the ideal gas law to recognize that:
+\[ P\Delta V = nR \Delta T \]
+Making this subtitution, we have:
+\[ n \frac{\chi}{2}R\Delta T = -nR \Delta T + Q \]
+Combining the like terms, we have:
+\[ Q = nR\left(\frac{\chi}{2}+1\right)\Delta T \]
+Now, let us define the heat capacity at constant pressure:
+\begin{equation}
+c_p = \left( \frac{\chi}{2}+1 \right)R = c_v+R
+\end{equation}
+Which gives us the formula for the heat in an isobaric process:
+\begin{equation}
+    Q = nc_p \Delta T
+\end{equation}
+You may very well recognize this formula from high school physics or chemistry! Something of interest to point out here; we notive that $c_p>c_v$, or that the heat capacity at constant pressure is higher than the heat capacity at constant volume. This tells us that when something is allowed to expand as it is heated (retaining constant pressure), it requires more energy to increase its temperature than if it is kept at a fixed volume.
+\\
+Finally, let's consider what an isobaric process looks like on a PV diagram. As you might suspect, since we fix $P$ and let $V$ vary throughout the whole process, we yet again get a straight line, except this time a horizontal one. Pictured below is an isothermal expansion:
+
+\begin{center}
+    \begin{tikzpicture}
+ \draw[stealth-stealth] (0,5) node[below left]{$P$} |- (5,0) node[below left]{$V$};
+\draw[thick,->] (1,2.5) -- (2.5,2.5);
+\draw[thick] (2.5,2.5) -- (4,2.5);
+\draw[dashed] (0,2.5) -- (1,2.5);
+\draw[dashed] (1,0) -- (1,2.5);
+\draw[dashed] (4,0) -- (4,2.5);
+\filldraw (1,2.5) circle (2pt);
+\filldraw (4,2.5) circle (2pt);
+\node[below] at (4,0) {$V_2$};
+\node[below] at (1,0) {$V_1$};
+\node[left] at (0,2.5) {$P_1$};
+\node[above] at (1,2.5) {$T_1$};
+\node[above] at (4,2.5) {$T_2$};
+\end{tikzpicture}
+\end{center}
+Again, for visual confirmation of our result for work during an isobaric process, we can see that the (negative) area under the curve is $-P_1\Delta V$, by inspection. 

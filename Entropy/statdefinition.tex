@@ -1,0 +1,53 @@
+
+\subsubsection{The Definition of Entropy}
+Now that we know what micro and macro states are, we can define entropy using statistics! In this case, entropy is defined as
+\begin{equation}
+    \label{eqn:(41)}
+    S=k_{b}\ln{\Omega}
+\end{equation}
+
+where $\Omega$ is the number of possible microstates within the current macrostate of the system. \\
+With a closed system of constant volume, we can characterize macrostates using the temperature of the system, and microstates as the exact distribution of kinetic energies amongst the particles in the system. Using this we can start to see all the parallels between the two different ways of defining entropy.
+\begin{enumerate}
+    \item At $T=0\textrm{K}$ every particle must have no kinetic energy. So, there's only one possible microstate, and by equation \ref{eqn:(41)} above $S=0$. This is exactly what we'd expect from the third law of thermodynamics, at absolute zero temperature, we obtain that entropy has a constant value\footnote{Note that the third law of thermodynamics does not say a system reaches zero entropy as it approaches zero temperature, as there do exist certain systems where the minimum energy (i.e. low temperature) states are not unique. Therefore, there still can be more than one microstate, and hence nonzero (but still constant) entropy. You don't need to know about these in any kind of detail.}.
+    \item If you have two systems (a and b), the amount of microstates in a system including both of them is $\Omega_{a}\Omega_{b}$. Therefore, the total entropy is...
+    \begin{align*}
+        S_{total}&=k_{b}\ln{\Omega_{a}\Omega_{b}} \\
+        &=k_{b}\ln{\Omega_{a}}+k_{b}\ln{\Omega_{b}} \\
+        &=S_{1}+S_{2}
+    \end{align*}
+    Since the total entropy is the sum of the entropy of both systems, entropy is an extensive quantity!
+    \item In our example for microstates/macrostates above, the macrostate with the highest number of microstates was the one where each side had three particles (if you don't believe me count them). This analogy applies to two systems that can exchange energy, they have the maximum number of microstates (and therefore entropy) when they share the energy equally (i.e. have the same temperature). 
+\end{enumerate}
+To close off our discussion of macrostates, microstates, and the statistical definition of entropy, let us consider another concrete example, in the form of the entropy of rolling two dice. Therein, we can consider the macrostate as the sum of the two dice rolls, and the microstates as the particular values we got on each dice (here, we imagine that the dice are unique, in that I can tell them apart from each other). For example, if I rolled the first dice to be 6, and the second dice to be 1, then the microstate could be described with $(6,1)$ and this microstate belongs to the macrostate of $7$. A complete description of all of the macrostates and microstates (as well as the entropy of the macrostate, as defined in this section) is given in the table below, though you may want to work this out for yourself first for practice.
+
+\begin{center}
+ \begin{tabular}{|c c c|} 
+ \hline
+ \textbf{Macrostates} & \textbf{Microstates} & \textbf{Entropy}\\ 
+ \hline\hline
+ 2 & (1,1) & $k_b\ln(1) = 0$\\ 
+ \hline
+ 3 & (1,2),(2,1) & $k_b\ln(2)$ \\
+ \hline
+ 4 & (1,3),(2,2),(3,1) & $k_b\ln(3)$ \\
+ \hline
+ 5 & (1,4),(2,3),(3,2),(4,1) & $k_b\ln(4)$ \\
+ \hline
+ 6 & (1,5),(2,4),(3,3),(4,2),(5,1) & $k_b\ln(5)$ \\
+ \hline
+ 7 & (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) & $k_b\ln(6)$\\
+ \hline
+ 8 & (2,6),(3,5),(4,4),(5,3),(6,2) & $k_b\ln(5)$\\
+ \hline
+ 9 & (3,6),(4,5),(5,4),(6,3) & $k_b\ln(4)$\\
+ \hline
+ 10 & (4,6),(5,5),(6,4) & $k_b\ln(3)$\\
+ \hline
+ 11 & (5,6),(6,5) & $k_b\ln(2)$\\
+ \hline
+ 12 & (6,6) & $k_b\ln(1) = 0$\\
+ \hline
+\end{tabular}
+\end{center}
+This example also demonstrates an assumption I implicitly made up until this point: all possible microstates are equally likely to appear (in the last example, unless you had loaded dice, every dice roll would have been equally likely!). This is a very fundamental assumption, so much so that it is called the \textbf{Fundamental Assumption of Statistical Mechanics}. Just to restate it for a more general case (as not every system in the universe is a bunch of dice), it states that every microstate of a system is equally likely and the system on average spends the same amount of time in each of them. We will use this in the next section to conclude our discussion of entropy. 
