@@ -1,0 +1,43 @@
+\subsection{The Ideal Gas Law and Definining Temperature}
+Possibly the most important equation you'll encounter in thermodynamics is the ideal gas law. It states that
+\begin{equation}
+    \label{eqn:(4)}
+    PV=Nk_{b}T
+\end{equation}
+where $P$ is the pressure of the gas (in Pascals), $V$ the volume (in $m^3$), $N$ the number of molecules of gas, $T$ the temperature (in \textbf{Kelvin})\footnote{Just as a refresher, x Kelvin = x-273 Celsius, and 0 Kelvin is absolute zero.}, and $k_b$ is Boltzmann's constant ($1.381 \times 10^{-23} \textrm{ m}^2 \textrm{ kg} \textrm{ s}^{-2} \textrm{ K}^{-1}$). We can consider this relationship as this as an empirical result; essentially, it is the combination of three simple gas laws that were determined experimentally. First, we had Boyle's Law, which tells us that for fixed temperature $T$ and amount of gas $N$, the pressure $P$ is inversely proportional to the volume $V$:
+\begin{equation}
+    P \propto \frac{1}{V}
+\end{equation}
+We then have Charles' Law, which tells us that for fixed pressure $P$ and amount of gas $N$, the volume $V$ is directly proportional to the temperature $T$:
+\begin{equation}
+    V \propto T
+\end{equation}
+Finally, we have Avogadro's Law, which tells us that for constant temperature $T$ and constant pressure $P$, The volume of gas $V$ is directly proportional to the amount $N$:
+\begin{equation}
+    V \propto N
+\end{equation}
+I will leave it to you to show that combining these three leads to the ideal gas law as we have stated it!\footnote{You can fairly easily show that this version of the gas law is equivalent to $PV=nRT$, the version you might be more familiar with; see the questions section!} \\
+\noindent
+Now, with everything we need in place, let's finally define temperature microscopically. Substituting equation \ref{eqn:(2)} from the previous section:
+\begin{align*}
+    \frac{3}{2}PV=N\epsilon_{kavg}
+\end{align*}
+And substituting in the ideal gas law, we get:
+\begin{align*}
+    \frac{3}{2}Nk_bT = N\epsilon_{kavg}
+\end{align*}
+Cancelling the $N$s and rearranging for the temperature $T$, we obtain:
+\begin{equation}
+    \label{eqn:(8)}
+    T = \frac{2}{3k_b}\epsilon_{kavg}
+\end{equation}
+which seems like a good definition of temperature! What it essentially tells us is that the faster particles are moving in a gas on average, the hotter it is (although heavy particles can make up the difference, as mass also plays into kinetic energy).\\
+\noindent
+The final thing I should definitely mention is the long list of assumptions that equations \ref{eqn:(2)} and \ref{eqn:(4)} make. They are, in no particular order:
+\begin{enumerate}
+    \item A gas is made up of point-like particles of identical mass.
+    \item The particles in a gas only interact via collisions.
+    \item All collisions of particles in a gas are elastic.
+\end{enumerate}
+The above three conditions are what it means for a gas to be ideal. For those of you who followed along with the derivation of equation \ref{eqn:(2)}, you might recognize why these assumptions were necessary to make. \\
+You might be tempted to ask; if equations \ref{eqn:(2)} and \ref{eqn:(4)} only hold for ideal gases, then does our new definition of temperature only hold for ideal gases as well? Actually, no! Even though the derivation we did for it used formulas that only applies to ideal gases, it turns out that the definition holds for \textbf{all} gases.

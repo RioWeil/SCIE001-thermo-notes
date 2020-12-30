@@ -1,0 +1,34 @@
+\subsection{PV Diagrams}
+Like all things in physics, physicists really enjoy graphing thermodynamic processes. Their particular favorite is the PV graph, putting pressure on the y-axis and volume on the x-axis; from the ideal gas law, you may see why this is a natural choice of axes. Shown below is a PV graph of a thermodynamic process that takes the gas from starting temperature $T_1$ (at pressure $P_1$ and volume $V_1$) to temperature $T_2$ (at pressure $P_2$ and volume $V_2$). Of course, there's nothing stopping us from assigning numbers to $P,T,V$, as well, if the situation calls for it. The process pictured below is an expansion of the gas, but we could also very well draw the arrow the other way and depict a compression of the gas. 
+\begin{center}
+\begin{tikzpicture}
+ \draw[stealth-stealth] (0,5) node[below left]{$P$} |- (5,0) node[below left]{$V$};
+ \draw[thick,->] (1,4) -- (2.5,2.5);
+\draw[thick] (2.5,2.5) -- (4,1);
+\draw[dashed] (4,0) -- (4,1);
+\draw[dashed] (1,0) -- (1,4);
+\draw[dashed] (4,1) -- (0,1);
+\draw[dashed] (1,4) -- (0,4);
+\filldraw (1,4) circle (2pt);
+\filldraw (4,1) circle (2pt);
+\node[below] at (1,0) {$V_1$};
+\node[below] at (4,0) {$V_2$};
+\node[left] at (0,1) {$P_2$};
+\node[left] at (0,4) {$P_1$};
+\node[right] at (1,4) {$T_1$};
+\node[right] at (4,1) {$T_2$};
+ \end{tikzpicture}
+ \end{center}
+ To get a feel for these kinds of graphs, I would suggest trying to make some. Write down an initial state and final state for your gas with one or two quantities remaining constant, and try to figure out what the graph between those two steps would look like. For example, if I had
+\begin{itemize}
+    \item Initial State: P = 10kPa, V = 1m$^3$, N = 10molecules, T = 300K
+    \item Final State: P = 5kPa, V = 2$m^3$, N = 10molecules, T = 300K
+\end{itemize}
+What would the graph between the two states look like if temperature and number of molecules were held constant the entire time? (Hint: You might be first inclined to think it looks like a diagonal line like the diagram above, but this isn't quite correct; think about why the condition of temperature being held constant for the entire time might not hold in this case). The answer will be revealed very shortly, when we discuss the PV diagrams of the 4 basic thermodynamic processes! \\
+Before we go there though, there is one very useful connection between PV diagrams and work that I would like to point out. In the previous section, we defined the work done on the gas as:
+\[ W = -\int_{V_1}^{V_2} P(V)dV \]
+And looking at the PV diagram, it now becomes clear that this is nothing more than the (negative) area under the PV curve! As an example, let's figure out the work done on the gas in the process shown above. All we have to do is calculate the area underneath the curve. For convenience, let us split it into two parts of the triangle and the rectangle. For the triangle, we have area $\frac{1}{2}*\left(P_1-P_2\right)*\left(V_2-V_1\right)$, and for the rectangle, we have area $P_2*\left(V_2-V_1\right)$. Therefore, the total area under the graph is:
+\[ \text{Area } = \frac{1}{2}*\left(P_1-P_2\right)*\left(V_2-V_1\right) + P_2*\left(V_2-V_1\right) = \frac{1}{2}\left[\left(P_1+P_2\right)\left(V_2-V_1\right) \right]\]
+This area is in fact the work done \textbf{by} the gas, and the work done on the gas is just its negative:
+\[W_{on} = \frac{1}{2}\left[\left(P_1+P_2\right)\left(V_1-V_2\right) \right]\]
+When using this area argument, do be careful of which direction the curve is going; for example, if the process was a compression of the gas rather than an expansion, we would have to introduce a negative sign as things would be going in the opposite direction. 

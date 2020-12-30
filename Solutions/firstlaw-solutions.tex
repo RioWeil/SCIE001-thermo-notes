@@ -1,0 +1,174 @@
+\subsection{\texorpdfstring{The 1\textsuperscript{st} Law of Thermodynamics Solutions}{The 1st Law of Thermodynamics Solutions}}
+\begin{enumerate}
+    \item 
+    \begin{enumerate} 
+    \item Rearranging equation \ref{eqn:(33)}, to solve for pressure, we have:
+    \begin{gather*}
+        \left(P+a\frac{n^2}{V^2}\right)V = nRT \\
+        PV + a\frac{n^2}{V} = nRT \\
+        PV = nRT - \frac{an^2}{V} \\
+        P = \frac{nRT}{V}-\frac{an^2}{V^2}
+    \end{gather*}
+    \item Applying equation \ref{eqn:(16)} (the equation for thermodynamic work), we have:
+    \[W = -\int_{V_1}^{V_2}P(V)dV = -\int_{V_1}^{V_2}\left(\frac{nRT}{V}-\frac{an^2}{V^2} \right)dV \]
+    \end{enumerate}
+    As the compression is isothermal, $T$ is constant and I can take it out of the integral. The remaining integrals for $V$ are elementary:
+    \[W = an^2\int_{V_1}^{V_2}\frac{1}{V^2}dV - nRT\int_{V_1}^{V_2}\frac{1}{V}dV \]
+    \[ W = an^2 \left. -\frac{1}{V}\right|_{V_1}^{V_2} + nRT\left. \ln(V)\right|_{V_1}^{V_2} \]
+    \[W = an^2\left(\frac{1}{V_1}-\frac{1}{V_2}\right) + nRT\ln\left(\frac{V_2}{V_1}\right)\]
+    So we see that the work done is very similar to the ideal gas isothermal compression, just with an additional corrective term of $an^2\left(\frac{1}{V_1}-\frac{1}{V_2}\right)$.
+    \item Answers summarized in chart below. Note that we define all the signs here in terms of what is done to the gas. So, + work done on gas is when we do work, - work done on gas is when the gas does work for us. + Heat flow into the gas means we supply heat to the gas, - heat flow into the gas means the gas releases heat.
+\begin{center}
+ \begin{tabular}{|c| c | c | c|} 
+ \hline
+ \textbf{Process} & \textbf{Work on gas} & \textbf{Heat into gas} & $\Delta T$\\ 
+ \hline\hline
+ Isochoric heating & 0 & + & + \\
+ Isochoric cooling & 0 & - & - \\
+ Isobaric expansion & - & + & + \\
+ Isobaric compression & + & - & - \\
+ Isothermal expansion & - & + & 0 \\
+ Isothermal compression & + & - & 0 \\
+ Adiabatic expansion & - & 0 & - \\
+ Adiabatic compression & + & 0 & + \\
+ \hline
+ \end{tabular}
+ \end{center}
+    \item 
+    \begin{enumerate}
+        \item Internal energy is a function of state, and after one cycle the system is back in its initial state. Therefore, the net change in internal energy is zero.
+        \item There's an easy way to do this; just calculate the area of the triangle in the graph. So
+        \begin{align*}
+            W_{net} &= \frac{2\textrm{m}^3\cdot 10\textrm{kPa}}{2}
+            = 10\textrm{kJ}
+        \end{align*}
+        So the work done by the engine in one cycle is $10\textrm{kJ}$. 
+        \item Since the net change in internal energy of the heat engine is zero, and the heat engine does $10\textrm{kJ}$ of work per cycle, by the first law of thermodynamics, there must be a net flow of $10\textrm{kJ}$ of heat \textit{into} the engine per cycle.
+        \item From ideal gas law, we know that $T = \frac{PV}{nR}$. We know that $n=1\textrm{mol}$, and we can just plug in the known values of $P$ and $V$ at each point. For $1$, we have $P = 5\textrm{kPa}, V = 4\textrm{m}^3$, so $T_1 = \frac{5000\textrm{Pa}*4\textrm{m}^3}{1\textrm{mol}*8.314\textrm{ J} \textrm{ mol}^{-1} \textrm{ K}^{-1}} \approx 2,406 \textrm{K}$. Similarly, for $2$ we have $P = 5\textrm{kPa}, V = 2\textrm{m}^3$, giving us $T_2 \approx 1203\textrm{K}$, and for $3$ we have $P = 15\textrm{kPa}, V = 2\textrm{m}^3$, giving us $T_3 \approx 3608\textrm{K}$. This is perhaps an unrealistically hot engine!
+        \item Starting with work, we already know that the cycle does a net work of 10kJ on the environment. In process $1 \rightarrow 2$, we can calculate the area under the graph (a nice easy rectangle) to get that the gas does $W = -10\textrm{kJ}$, or we do $10\textrm{kJ}$ of work on the gas. Since process $2 \rightarrow 3$ is isochoric, no work is done. Finally, we can see on the graph that the work done by $3 \rightarrow 1$ is the area of the triangle plus the area of the rectangle. So, this process does $20\textrm{kJ}$ of work on the environment. Adding up the work done during each process, we recover the original net work value of $10\textrm{kJ}$ that the engine does for us. \\
+        Now to solve for the heat. For process $1 \rightarrow 2$, we have that $Q = -nc_p\Delta T$ (as we derived for an isobaric process) where $c_p = \frac{\chi}{2}R+R = \frac{5}{2}R$ for a monoatomic gas, and $\Delta T = T_2-T_1 = 2406\mathrm{K} -1203\mathrm{K}  = 1203\mathrm{K} $. Therefore, we have that:
+        \[Q_{1\rightarrow 2} = nc_p\Delta T = 1\textrm{mol}*\frac{5}{2}*8.314\textrm{ J} \textrm{ mol}^{-1} \textrm{K}^{-1}*1203\mathrm{K} \approx 25\textrm{kJ}\]
+        So we find that 25kJ of heat leaves the engine. \\
+        For process $2\rightarrow 3$, we have an isochoric process, so $Q = nc_v\Delta T$, where $c_v = \frac{3}{2}R$ and $\Delta T = T_3-T_2 = 3608\textrm{K}-1202\textrm{K} = 2406\textrm{K}$, so we have that:
+        \[Q_{2\rightarrow 3} = nc_v\Delta T = 1\textrm{mol}*\frac{3}{2}*8.314\textrm{ J} \textrm{ mol}^{-1} \textrm{K}^{-1}*2406\mathrm{K} \approx 30\textrm{kJ}\]
+        So we find that 30kJ of heat enters the engine. \\
+        Finally, for process $3 \rightarrow 1$, we have a bit of a strange process that we haven't defined and doesn't follow a nice rule of something being held constant. In this case, we use the first law of thermodynamics:
+        \[ \Delta E = Q+W \]
+        and combine it with the relation:
+        \[ \Delta E = nc_v\Delta T \]
+        To get:
+        \[nc_v\Delta T = Q+W\]
+        We know that $W = -20\textrm{kJ}$ in this process from the area underneath the curve (the gas does 20kJ of work), and we can solve for $\Delta T = T_1-T_3 = 2406\textrm{K}-3608\textrm{K} = -1,202\textrm{K}$. Plugging everything in, we find:
+        \[Q = 1\textrm{mol}*\frac{3}{2}*8.314\textrm{ J} \textrm{ mol}^{-1} \textrm{K}^{-1}*-1202\mathrm{K} + 20\textrm{kJ} \approx 5\textrm{kJ}\]
+        So we obtain that 5kJ of heat flows into the engine during this process.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Since process $3 \rightarrow 1$ is isothermal, $T_1 = T_3$. So, the ratio would be 1:1.
+        \item Since $3 \rightarrow 1$ is an isothermal process, we have that $P_1V_1 = P_3V_3$. This can then be rearranged to get that $P_3 = 2P_0$.
+        \item Using the same method as in 3) we can see from the graph that point 2 has the lowest temperature. Since $3 \rightarrow 1$ is isothermal, that means that points 3, 1, and any point on the process between are at the highest temperature.
+        \item We'll start off by calculating the heat flowing into the engine. Heat must flow into the engine during processes $2 \rightarrow 3$ (since it gains energy with no work done) and $3 \rightarrow 1$ (since it does work but remains at the same energy). Since $2 \rightarrow 3$ is isochoric we can say that
+        \begin{align*}
+            Q &= \Delta E \\
+            &= nc_V\Delta T \\
+            &= nc_V\Delta\frac{PV}{nR} \text{  applying ideal gas law} \\
+            &= \frac{\chi}{2}V_2(P_3 - P_2) \\
+            &= \frac{\chi}{2}\frac{V_0}{2}(2P_0 - P_0) \\
+            &= \frac{\chi}{4}V_0P_0
+        \end{align*}
+        Next, since process $3 \rightarrow 1$ is isothermal we can say that
+        \begin{align*}
+            Q &= -W \\
+            &= -nRT\ln{\frac{V_3}{V_1}} \\
+            &= nR\frac{P_1V_1}{nR}\ln{\frac{V_1}{V_3}} \\
+            &= P_0V_0\ln{\frac{V_0}{V_0/2}} \\
+            &= P_0V_0\ln{2}
+        \end{align*}
+        So in total we get that $Q_{in} = \frac{\chi}{4}V_0P_0 + P_0V_0\ln{2}$. Next, we'll deal with the net work done by the system. Process $1 \rightarrow 2$ is isobaric, so we can pretty quickly calculate that we do $\frac{P_0V_0}{2}$ joules of work on the system. Process $2 \rightarrow 3$ is isochoric and does no work. Since process $3 \rightarrow 1$ is isothermal, we can say that $W = -Q$. Thus, we get that $P_0V_0\ln{2}$ joules of work is done on the environment. Combining these together to calculate efficiency we get
+        \begin{align*}
+            \eta &= \frac{W_{net}}{Q_{in}} \\
+            &= \frac{P_0V_0\ln{2} - \frac{P_0V_0}{2}}{\frac{\chi}{4}V_0P_0 + P_0V_0\ln{2}} \\
+            &= \frac{\ln{2} - \frac{1}{2}}{\frac{\chi}{4} + \ln(2)}
+        \end{align*}
+        For any monoatomic gas, $\chi = 3$, so we get that $\eta \approx 0.13$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The quickest way way to solve it is with process $3 \rightarrow 1$ (although you could also use all three processes, if you so desired). Since this process is adiabatic, we have that
+        \begin{gather*}
+            T_1V_1^{\gamma-1} = T_3V_3^{\gamma-1} \\
+            \frac{T_3}{T_1} = \frac{V_1}{V_3}^{\gamma-1}
+        \end{gather*}
+        For monoatomic gasses, $\gamma = \frac{5}{3}$ so plugging in all the values
+        \begin{equation*}
+            \frac{T_3}{T_1} = \frac{V_0}{V_0/2}^{\frac{2}{3}} \\
+            \frac{T_3}{T_1} = 2^{\frac{2}{3}}
+        \end{equation*}
+        \item We're basically doing the same thing here. We can say that 
+        \begin{gather*}
+            P_1V_1^{\gamma} = P_3V_3^{\gamma} \\
+            P_3 = P_1\frac{V_1}{V_3}^{\gamma} \\
+            P_3 = P_1\frac{V_1}{V_3}^{\frac{5}{3}} \\
+            P_3 = P_0 2^{\frac{5}{3}}
+        \end{gather*}
+        \item Using the same logic as we did for question 3, it's pretty clear on the graph that point 2 has the lowest temperature. We also know from a) that $\frac{T_3}{T_1} > 1$, so we get that point 3 has the highest temperature.
+        \item Let's start with the net heat put into the system. Heat only flows into the system in process $2 \rightarrow 3$, so we'll focus on that. In this process no work is done, so we get that $Q = nc_V\Delta T$. The problem is we don't know the temperature in either state. However, we can get tricky with this to rearrange into something more manageable using ideal gas law and the previous parts of this question
+        \begin{align*}
+            Q &= nc_V(\frac{V_2\Delta P}{nR}) \text{  from ideal gas law} \\
+            &= \frac{\chi}{2}V_2\Delta P \\
+            &= \frac{\chi}{2}V_2(P_3 - P_2) \\
+            &= \frac{\chi}{2}(V_0\cdot 2^{-1})(P_0\cdot 2^{\frac{5}{3}} - P_0\cdot 2^{-1}) \text{  from part b} \\
+            &= \frac{\chi}{4}V_0P_0(2^{\frac{8}{3}} - 1)
+        \end{align*}
+        Ouch. Well no matter, we soldier on to work which is going to be even more difficult. Fun. Let's start with the easy part. Work is only done on the system during process $1 \rightarrow 2$. Since its an isobaric process, this leads us to conclude that $W_{1\rightarrow 2} = \frac{P_0V_0}{2}$. Nice! Now for process $2 \rightarrow 3$, where the system does work (much less nice). We're going to use a similar trick to last time, except our expression for work is coming from adiabatic processes (the negative is placed in front because work on the surroundings is normally considered negative)
+        \begin{gather*}
+            \Delta E = -W \\
+            W = -nC_V\Delta T \\
+            W = -nc_V(\frac{\Delta VP}{nR}) \text{  from ideal gas law} \\
+            W = -\frac{\chi}{2}(P_1V_1 - P_3V_3) \\
+            W = \frac{\chi}{2}(P_0\frac{V_0}{2}2^{\frac{5}{3}} - P_0V_0) \\
+            W = \frac{\chi}{2}P_0V_0(2^{\frac{2}{3}} - 1)
+        \end{gather*}
+        And yet another ooof done. So, we now get that the net work is
+        \begin{align*}
+            W_{net} &= \frac{\chi}{2}P_0V_0(2^{\frac{2}{3}} - 1) - \frac{P_0V_0}{2} \\
+            &= \frac{P_0V_0}{2}(\chi(2^{\frac{2}{3}} - 1) - 1)
+        \end{align*}
+        We're almost there! Now all that remains is to plug these into the efficiency equation
+        \begin{align*}
+            \eta &= \frac{W_{net}}{Q_{in}} \\
+            &= \frac{\frac{P_0V_0}{2}(\chi(2^{\frac{2}{3}} - 1) - 1)}{\frac{\chi}{4}V_0P_0(2^{\frac{8}{3}} - 1)} \\
+            &= 2\frac{\chi(2^{\frac{2}{3}} - 1) - 1}{\chi(2^{\frac{8}{3}} - 1)}
+        \end{align*}
+        For a monoatomic gas, $\chi = 3$ so we get that $\eta \approx 0.095$. All that for a less efficient process!
+    \end{enumerate}
+    An interesting thing to note is that the heat engine in 4) is more efficient than the one in 5) only for monoatomic gases. This is of course assuming that diatomic and triatomic gases follow ideal gas law, which isn't a bad approximation (for "low" pressures).
+    \item As a quick reminder, we're trying to prove that $\frac{V_2}{V_1} = \frac{V_3}{V_4}$ in our Carnot engine. Since the processes from states d to a and b to c are adiabatic, we have that
+    \begin{equation*}
+        P_1V_1^\gamma = P_4V_4^\gamma \hspace{2cm} P_2V_2^\gamma = P_3V_3^\gamma
+    \end{equation*}
+    Since the processes from states a to b and c to d are isothermal, we have that
+    \begin{equation*}
+        P_1V_1 = P_2V_2 \hspace{2cm} P_3V_3 = P_4V_4
+    \end{equation*}
+    Since the pressure and volume are both nonzero, we can divide the first two equations to get
+    \begin{equation*}
+        \frac{P_1V_1^\gamma}{P_2V_2^\gamma} = \frac{P_4V_4^\gamma}{P_3V_3^\gamma}
+    \end{equation*}
+    Which we can factor to
+    \begin{equation*}
+        \frac{P_1V_1V_1^{\gamma - 1}}{P_2V_2V_2^{\gamma - 1}} = \frac{P_4V_4V_4^{\gamma - 1}}{P_3V_3V_3^{\gamma - 1}}
+    \end{equation*}
+    Which, by the third and fourth equations we can see is equivalent to
+    \begin{equation*}
+        \frac{V_1^{\gamma - 1}}{V_2^{\gamma - 1}} = \frac{V_4^{\gamma - 1}}{V_3^{\gamma - 1}}
+    \end{equation*}
+    We know that $\gamma > 1$, so we can take the $(\gamma - 1)$th root of both sides to get
+    \begin{equation*}
+        \frac{V_1}{V_2} = \frac{V_4}{V_3}
+    \end{equation*}
+    Or, inverting the equation
+    \begin{equation*}
+        \frac{V_2}{V_1} = \frac{V_3}{V_4}
+    \end{equation*}
+\end{enumerate}

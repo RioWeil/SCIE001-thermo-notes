@@ -1,0 +1,31 @@
+\subsection{Entropy Solutions}
+\begin{enumerate}
+    \item For any process, we define the change in entropy as the sum of $\frac{\delta Q}{T}$ for many infinitesimal steps. In an adiabatic process, heat never flows, so $\delta Q = 0$ for all of these steps. Thus, in an adiabatic process the entropy of a system remains constant.
+    \item There are four triplets of numbers that could sum to $7$, $(5,1,1)$, $(4,2,1)$, $(3,3,1)$, and $(3,2,2)$. Each of these has $3!$ orders they could be rolled in. Hence there are $24$ microstates, for a total entropy of $k_{b}\ln{24}$.
+    \item In this case, all possible orders of those four triples are considered the same microstate. So we instead have four possible microstates, for a total entropy of $k_{b}\ln{4}$.
+    \item After one cycle, the gas medium of a heat engine is in its initial state. Since entropy is a function of state, the gas must then have the same total entropy as it did at the start of a cycle. So after one cycle, the gas's entropy will not change.
+    \item The number of possible ways that the particles could be distributed after removing the partition is much higher than before the partition was removed (i.e. the disorder of the system increases quite a bit). So, the entropy of the system has increased. Therefore, to spontaneously return to their initial state the gases would have to violate the second law of thermodynamics. (One thing to note here is that it's technically possible that the system will eventually momentarily reach its original configuration, just extremely unlikely).
+    \item Using the Sackur-Tetrode equation we have that 
+    \begin{equation*}
+        \Delta S = nc_{v}\ln{\frac{T_1}{T_0}} + nR\ln{\frac{V_1}{V_0}}.
+    \end{equation*}
+    $T_0 = 300\textrm{K}$, $T_1 = 400\textrm{K}$, and $n = 1\textrm{mol}$ are given. Furthermore, since it expands to double its original size, we know that $V_1 = 2V_0$. Finally, we know that the gas has 3 degrees of freedom, since its monoatomic, and therefore $c_v = \frac{3}{2}R$. So plugging those in we get
+    \begin{gather*}
+        \Delta S = (1\textrm{mol})(\frac{3}{2})(8.314\frac{\textrm{J}}{\textrm{mol}\cdot \textrm{K}})\ln{\frac{400\textrm{K}}{300\textrm{K}}} + (1\textrm{mol})(8.314\frac{\textrm{J}}{\textrm{mol}\cdot \textrm{K}})\ln{\frac{2V_0}{V_0}} \\
+        \Delta S \approx 9.35\frac{\textrm{J}}{\textrm{K}}
+    \end{gather*}
+    \item
+    \begin{enumerate}
+        \item From the ideal gas law, if both compartments have the same amount and volume of gas, but the right side has a higher temperature, then we know that the right side will have a higher pressure than the left. Therefore, the gas on the right side will expand and the gas on the left side of the box will be compressed (as the gas molecules on the right are pushing with more force on the central piston), in an adiabatic process (as no heat can flow). The process will terminate once the pressure on both sides of the box is equal.
+        \item Since this process resulted in no energy gain or loss (as the box is isolated from its environment), the internal energy change of the system is zero. Since this process raises the temperature on the left to be closer to that on the right, you would think that this process raises the entropy of the system. However, since both sides of the box underwent an adiabatic process, neither had a change in entropy. Entropy is an extensive quantity, so the entropy of the box must have remained constant as well.
+        \item At the end, the pressure of the two sides would be equal, as the net force on the central piston would be zero. The volume of the left side would be less than the right. Finally, since both sides of the box have the same number of moles of gas, we can use ideal gas law to say that after the process is over:
+    \[
+        \frac{P_lV_l}{T_l} = \frac{P_rV_r}{T_r}
+    \]
+    which since the final pressures are equal simplifies to
+    \[
+        \frac{V_l}{T_l} = \frac{V_r}{T_r}
+    \]
+    We know that the final volume of the left side is less than the final volume on the right side. Therefore, the final temperature on the right must be greater than that on the left. The system is not in thermal equilibrium, which does make sense as the two containers were not in thermal contact with one another.
+    \end{enumerate}   
+\end{enumerate}

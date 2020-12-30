@@ -1,0 +1,40 @@
+\subsection{Temperature and Other Fundamentals Solutions}
+\begin{enumerate}
+    \item Particles in an ideal gas undergo elastic collisions. It is one of the necessary conditions for a gas to be considered ideal.
+    \item \begin{enumerate}
+        \item Substituting $k_b = \frac{R}{N_A}$ into the ideal gas law $PV = Nk_bT$, we get:
+    \[PV = N\frac{R}{N_A}T \]
+    And the number of molecules $N$ divided by Avogadro's number is just the number of moles of gas $n$, so this becomes:
+    \[PV = nRT \]
+    As desired.
+        \item This answer follows a very similar process to the previous problem. Substituting $k_b = \frac{R}{N_A}$ into the thermal energy of the system $E_{th} = \frac{\chi}{2}Nk_bT$, we get:
+    \[ E_{th} = \frac{\chi}{2}N\frac{R}{N_A}T \]
+    And using the same identity of $\frac{N}{N_A} = n$, as above:
+    \[ E_{th} = \frac{\chi}{2}nRT \]
+    As desired.
+        \item ubstituting $PV = nRT$ into $E_{th} = \frac{\chi}{2}nRT$, we obtain:
+    \[ E_{th} = \frac{\chi}{2}PV \]
+    As desired. 
+    \end{enumerate}
+    \item No, two systems having the same amount of total energy does not imply the same amount of temperature. Temperature is a measure of the average kinetic energy of particles, while total thermal energy is the measure of \textbf{all} the thermal energy of all the particles in the system. For example, a large ice cube and a millilitre of boiling water could have the same thermal energy, but clearly are at different temperatures. Mathematically, one only needs to look at the equation \[ E_{th} = \frac{\chi}{2}nRT \] to see that thermal energy depends not only on temperature, but the amount of stuff that you have (As well as the degrees of freedom of the stuff). 
+    \item Assuming that this vacuum-box is placed in a room with any molecules, then no. A vacuum is the absence of molecules, and in the absence of any molecules, you don't have any pressure on the walls of the box. So the inside of the box will have a different pressure than the outside, and hence not be in equilibrium.
+    \item \begin{enumerate}
+        \item If the volume of a box of ideal box decreased, then $V$ would decrease, while
+        the amount of gas $n$ and the temperature of gas $T$ would stay the same (as the average kinetic energy of the molecules wouldn't change in this case). Therefore by the ideal gas law $PV = nRT$, if the right hand side stays the same size while $V$ decreases, then the pressure $P$ must increase.
+        \item By the same logic as above, if the volume of the box of ideal gas increased, the pressure $P$ must decrease.
+        \item If the box of ideal gas springs a leak, then the amount of gas $n$ in the box decreases, while the volume $V$ and the temperature $T$ of the box would stay the same (as again, the average kinetic energy of the particles would not be affected). Therefore, by the ideal gas law $PV = nRT$, the pressure $P$ must decrease (as we would expect from any container that sprung a leak!)
+    \end{enumerate}
+    \item If this hypothetical super-heavy gas indeed could exist, then it clearly couldn't be ideal, as the gravitational attraction between the gas particles would be significant. So this isn't a situation where we can apply the ideal gas law. However, principles of energy conservation would still apply (as they always do). When we increase the volume of the box, the average distance between any two superheavy molecules will increase. When we increase the distance between the super-heavy gas molecules, the gravitational potential energy $U_g = -\frac{GM^2}{r}$ (Where $G$ is the gravitational constant, $m$ is the mass of one super-heavy molecule, and $r$ is the distance in between two molecules) increases (or to be more clear, it becomes less negative, as $r$ increases). Therefore, if the potential energy increases, energy conservation tells us that kinetic energy must then decrease. Another way of thinking about this is to pull appart two massive objects, I need to put energy into the system to pull them apart; this energy comes from the kinetic energy of the molecules in this case. Either way, the decrease of the kinetic energy of molecules means that by our definition of temperature $T=\frac{2}{3 k_{b}} \epsilon_{kavg}$ which linearly scales with the kinetic energy, the temperature of the super-heavy molecules must decrease. 
+    \item This question follows a similar thought process to the one above. Since we have a gas of electrons which clearly would interact with one another through the electrostatic force, our gas again is not ideal. However, we once again consider an argument from energy conservation. This time, the electric potential energy between two negatively charged electrons is given by $U_{q} = \frac{ke^2}{r}$, where $k$ is the constant in Coloumb's law, $e$ is the elementary charge on the electron, and $r$ is the distance between any two electrons. In this case, increasing the volume of the box and increasing the average distance between two electrons will lead to a decrease in the electric potential energy. Therefore, by energy conservation, the kinetic energy of the electrons must increase, and we would then have that the temperature of the electron gas would increase by the definition.
+    \item \begin{enumerate}
+        \item By equation \ref{eqn:(2)} of $\frac{3}{2}PV = N\epsilon_{kavg}$ we see that the pressure of of the box scales linearly with the number of particles. Therefore, the box with the greater number of particles would have greater pressure. However, temperature is independent of the number of particles, (as it only depends on the average kinetic energy of all the particles, by the definition $T=\frac{2}{3 k_{b}} \epsilon_{kavg}$) so therefore the temperature of the two boxes would be the same.  
+        \item Again looking at equation \ref{eqn:(2)} of $\frac{3}{2}PV = N\epsilon_{kavg}$, we see that the pressure scales linearly with kinetic energy; kinetic energy is linear in the mass $m$ of the particles. Therefore, the
+        box with the heavier (but identical speed) molecules would have greater kinetic energy and therefore greater pressure. By the same argument, since temperature also scales linearly with kinetic energy, the heavier-particle box would also have a higher temperature.
+    \end{enumerate}
+    \item I would have to supply three times as much heat. Recalling equation \ref{eqn:(13)} which relates the energy change with temperature, we have:
+    \begin{align*}
+        \Delta E = nc_v\Delta T = n\frac{\chi}{2}\Delta T
+    \end{align*}
+    Where $\Delta E$ is the change in temperature, $n$ is the number of moles of gas, $\chi$ is the degrees of freedom of the molecule. and $\Delta T$ is the change in temperature. For a monoatomic molecule, we have $\chi = 3$ and for a triatomic molecule, we have $\chi=6$. Therefore, per unit of temperature change, we would require three times as much energy for the triatomic 
+    \item A monoatomic molecule in 10 dimensional space would still not have any rotational degrees of freedom, but would have 10 translational degrees of freedom (don't bother thinking about what this looks like...) By the same argument given in the previous section, since the 10-D helium has more degrees of freedom, it would have a smaller temperature increase than the 3-D helium if both were given the same amount of energy. 
+\end{enumerate}
