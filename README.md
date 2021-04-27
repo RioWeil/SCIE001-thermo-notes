@@ -1,4 +1,4 @@
-# thermo-notes-scione
+# SCIE001-thermo-notes
 Notes on introductory thermodynamics for first-year physics, written for students in the UBC Science One Program.
 
 This project started in the summer of 2020 as an attempt for Justin Lawrence and I to create a small summary guide on thermodynamics to hopefully help the future Science One class in a (mildly) infamously difficult unit of physics. At some point, we completely seemingly abandoned the the notion that this would be "small", and after a few weeks of work, it evolved into a complete set of notes for the unit (effectively a small alternative textbook for the class). Although the Science One curriculum may cover some different topic from first-year treatments of the subject elsewhere, it may still provide some use for students looking for an elementary approach. It was written to be as conversational and easy to follow as possible. The only necessary pre-requisites are basic mechanics and single-variable calculus (basic derivatives and integrals).
